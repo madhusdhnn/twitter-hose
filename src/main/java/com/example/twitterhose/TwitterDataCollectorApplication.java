@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class TwitterDataCollectorApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TwitterDataCollectorApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TwitterDataCollectorApplication.class, args);
+    }
 
 }
