@@ -1,5 +1,6 @@
 package com.example.twitterhose.listeners;
 
+import com.example.twitterhose.exceptions.TwitterHoseListenerException;
 import com.example.twitterhose.services.KafkaPublisher;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,7 @@ public class TwitterHoseListener implements StatusListener {
     public void onException(Exception ex) {
         final String message = String.format("Error in twitter stream listener - %s", ex.getMessage());
         log.error(message, ex);
-        throw new RuntimeException(message, ex);
+        throw new TwitterHoseListenerException(message, ex);
     }
 
     @Override
